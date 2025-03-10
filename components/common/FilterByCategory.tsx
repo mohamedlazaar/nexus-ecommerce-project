@@ -5,6 +5,7 @@ import { AppDispatch, RootState } from '../../store';
 import { fetchCategories } from '../../store/categorySilce';
 import { filteredProductsByCategory } from '../../store/productSlice';
 
+
 // Define interfaces for props and category
 interface FilterByCategoryProps {
   selectedCategory?: string;
