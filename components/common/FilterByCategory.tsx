@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../store';
 import { fetchCategories } from '../../store/categorySilce';
@@ -19,7 +19,7 @@ interface Category {
 
 const FilterByCategory = ({ selectedCategory }: FilterByCategoryProps) => {
     const navigate = useNavigate();
-    const params = useParams();
+    // const params = useParams();
     const dispatch = useDispatch<AppDispatch>();
     const categories = useSelector((state: RootState) => state.categories.list) as Category[];
     
