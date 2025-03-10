@@ -13,7 +13,7 @@ const ProductList = ({ products }: { products: Product[] }) => {
                 <p>No products found</p>
             ) : (
                 <>
-                    <div className="flex flex-wrap justify-start items-center gap-y-3 ">
+                    <div className="flex flex-wrap justify-center items-center gap-y-3 ">
                         {products.map((product) => (
                             <ProductCard 
                                 key={product.id}

@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../store";
 import { fetchProducts } from "../store/productSlice"; // Import the existing Product type
 import { addToCart } from "../store/cartSilce";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import ProductCard from "./common/ProductCard";
 import Slider from "react-slick";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
@@ -25,11 +25,21 @@ const ArrowRight = () => (
 const LatestProducts = () => {
     const dispatch = useDispatch<AppDispatch>();
     const products = useSelector((state: RootState) => state.products.products);
+    const [loading, setLoading] = useState(true);
+
 
     useEffect(() => {
-        dispatch(fetchProducts());
+        const fetchData = async () => {
+            await dispatch(fetchProducts());
+            setLoading(false); //
+        };
+        fetchData();
     }, [dispatch]);
 
+    // If still loading, show a loading indicator
+    if (loading) {
+        return <div>Loading...</div>;
+    }
     const settings = {
         dots: true,
         infinite: true,

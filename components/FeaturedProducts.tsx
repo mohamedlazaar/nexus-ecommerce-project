@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../store";
 import { fetchProducts } from "../store/productSlice";
 import { addToCart } from "../store/cartSilce";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import ProductCard from "./common/ProductCard";
 import Slider from "react-slick";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
@@ -27,10 +27,20 @@ const ArrowRight = (props: any) => (
 const FeaturedProducts = () => {
     const dispatch = useDispatch<AppDispatch>();
     const products = useSelector((state: RootState) => state.products.products);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        dispatch(fetchProducts());
+        const fetchData = async () => {
+            await dispatch(fetchProducts());
+            setLoading(false); 
+        };
+        fetchData();
     }, [dispatch]);
+
+    // If still loading, show a loading indicator
+    if (loading) {
+        return <div>Loading...</div>;
+    }
 
     // Unique categories to ensure only one product per category
     const uniqueCategoryProducts = products.reduce((acc: any[], product: any) => {

@@ -24,7 +24,7 @@ const CategoryPage = () => {
 
 
     const [currentPage, setCurrentPage] = useState(Number(pageParam) || 1);
-    const productsPerPage = 10;
+    const productsPerPage = 12;
 
     useEffect(() => {
         dispatch(fetchCategories()); // Fetch categories

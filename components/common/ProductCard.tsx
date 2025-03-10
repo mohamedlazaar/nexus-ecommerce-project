@@ -1,19 +1,6 @@
 import {Link} from "react-router-dom";
 
-// Define types for the component props
-// interface Product {
-//   id: string | number;
-//   name: string;
-//   price: number;
-//   category_name: string;
-//   image_url: string;
-//   // Add other product properties as needed
-// }
 
-// interface ProductCardProps {
-//   product: Product;
-//   addToCart: () => void;
-// }
 
 const ProductCard = ({ product, addToCart }: any) => {
   return (
