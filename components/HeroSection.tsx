@@ -61,7 +61,7 @@ const HeroSlider = () => {
             </h1>
             <p className="text-lg text-white mb-6">{slide.description}</p>
          
-            <Link to="/categories/all">Discover Now</Link>
+            <Link to="/categories/all" className="p-2 bg-gray-700 text-white rounded-[10px]">Discover Now</Link>
           </div>
         </div>
       ))}
