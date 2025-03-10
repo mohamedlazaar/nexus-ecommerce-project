@@ -7,7 +7,7 @@ import { fetchCategories } from '../store/categorySilce';
 import {Link} from "react-router-dom";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-;
+
 const ArrowLeft = (props: any) => (
     <button {...props} className="absolute left-[-40px] top-1/2 transform -translate-y-1/2 z-10 text-gray-700 hover:text-black cursor-pointer">
         <FaArrowLeft size={30} />
