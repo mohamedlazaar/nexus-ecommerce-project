@@ -2,6 +2,7 @@
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import { BiLastPage, BiFirstPage } from "react-icons/bi";
 
+
 const Pagination = ({
     currentPage,
     totalPages,
