@@ -10,7 +10,7 @@ const images = [
     description: "Explore our latest products and innovations.",
   },
   {
-    src:  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqzW7i0NaSqkxd_WCd_IiKtbBSyALrmCBTcg&s",
+    src:  "https://t4.ftcdn.net/jpg/04/66/25/33/360_F_466253361_c4fAjCqVZD4L2boH8vfqjUbUYk0wLcP7.jpg",
     title: "Style Meets Comfort",
     description: "Upgrade your wardrobe with our new collection.",
   },
