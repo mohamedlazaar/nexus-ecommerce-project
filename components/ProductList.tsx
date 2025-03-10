@@ -3,6 +3,7 @@ import { addToCart } from '../store/cartSilce';
 import ProductCard from './common/ProductCard';
 import { AppDispatch } from '../store';
 import { Product } from '../store/productSlice'; // Import the Product type
+import React from 'react';
 
 const ProductList = ({ products }: { products: Product[] }) => {
     const dispatch = useDispatch<AppDispatch>();
