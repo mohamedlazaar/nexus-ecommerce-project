@@ -11,13 +11,30 @@ import Cart from './cart';
 import CheckoutPage from './checkout';
 import About from './about';
 import Contact from './contact';
+import { useEffect, useState } from 'react';
+import { CircularProgress } from '@mui/material';
 
 function App() {
+  const [loading, setLoading] = useState(true); // <- start as loading
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false); // <- stop loading after 3s
+    }, 3000);
+
+    return () => clearTimeout(timer); // cleanup
+  }, []);
   return (
     <Provider store={store}>
       <BrowserRouter>
         <main className='w-full overflow-x-hidden'>
-          <Header />
+          {loading ? (
+        <div className="flex justify-center items-center w-full h-[100vh]">
+          <CircularProgress />
+        </div>
+      ) : (
+        <>
+        <Header />
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/product/:id" element={<ProductPage />} />
@@ -30,6 +47,8 @@ function App() {
             {/* Add more routes as needed */}
           </Routes>
           <Footer />
+        </>
+      )}
         </main>
       </BrowserRouter>
     </Provider>

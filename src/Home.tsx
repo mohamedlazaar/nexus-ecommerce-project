@@ -6,13 +6,17 @@ import TopCategoriesSection from "../components/TopCategoriesSection";
 
 
 export default function Home() {
+
+
   return (
-    <div className="w-[100vw]  text-black">
-     <HeroSection/>
-     <CategoriesSection />
-     <FeaturedProducts />
-     <LatestProducts />
-     <TopCategoriesSection />
+    <div className="w-[100vw] text-black">
+     
+          <HeroSection />
+          <CategoriesSection />
+          <FeaturedProducts />
+          <LatestProducts />
+          <TopCategoriesSection />
+     
     </div>
   );
 }
